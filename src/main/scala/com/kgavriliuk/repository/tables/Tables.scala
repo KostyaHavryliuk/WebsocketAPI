@@ -1,6 +1,5 @@
 package com.kgavriliuk.repository.tables
 
-import akka.http.scaladsl.model.headers.CacheDirectives.public
 import slick.jdbc.PostgresProfile.api._
 
 import scala.concurrent.{Await, Future}
@@ -10,7 +9,7 @@ import slick.lifted.TableQuery
 import scala.concurrent.duration._
 import scala.concurrent.ExecutionContext.Implicits._
 import com.kgavriliuk.models.Table_
-import slick.jdbc.meta.{MQName, MTable}
+import slick.jdbc.meta.MTable
 
 
 class Tables(tag: Tag) extends Table[Table_](tag, "tables") {

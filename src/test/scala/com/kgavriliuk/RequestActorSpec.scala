@@ -4,7 +4,6 @@ import java.util.UUID
 
 import org.scalatest.{BeforeAndAfterAll, Matchers, WordSpec}
 import com.kgavriliuk.models._
-import com.kgavriliuk.repository.DataBase
 import org.scalatest.concurrent.Eventually
 import com.kgavriliuk.repository.tables.UserDAO._
 import com.kgavriliuk.repository.tables.TableDAO._
@@ -18,7 +17,6 @@ class RequestActorSpec extends WordSpec with Matchers with BeforeAndAfterAll wit
 
   override def beforeAll(): Unit = {
     Await.result(initUser.flatMap(_ => initTable), 10.seconds)
-//    DataBase.dbSetup
   }
 
   "RequestActor" must  {
